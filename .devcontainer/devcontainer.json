@@ -56,14 +56,14 @@
 		"ms-dotnettools.csharp",
 		"hookyqr.beautify",
 		"simonsiefke.prettier-vscode",
-		"streetsidesoftware.code-spell-checker"
+		"streetsidesoftware.code-spell-checker",
+		"rad-vscode-bicep.vsix"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [],
 	// add labels
 	"portsAttributes": {},
-	// download and install the Radius vs code extension 
-	"postCreateCommand": "wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix && code --install-extension rad-vscode-bicep.vsix && rm rad-vscode-bicep.vsix",
+	"waitFor": "postCreateCommand",
 	// Use 'onCreateCommand' to run commands as part of container creation. 
 	"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
 }
