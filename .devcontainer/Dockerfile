@@ -14,7 +14,5 @@ USER codespace
 # ensure the latest version of Bicep
 RUN rad bicep download
 
-ARG USERNAME=vscode
-
 # Download vsix
-RUN wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix -O /home/$USERNAME/rad-vscode-bicep.vsix
+RUN wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix -O /home/codespace/rad-vscode-bicep.vsix
