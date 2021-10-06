@@ -62,8 +62,8 @@
 	"forwardPorts": [],
 	// add labels
 	"portsAttributes": {},
-	// "oryx build" will automatically install your dependencies and attempt to build your project
-	"postCreateCommand": "oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'",
+	// download and install the Radius vs code extension 
+	"postCreateCommand": "wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix && code --install-extension rad-vscode-bicep.vsix && rm rad-vscode-bicep.vsix",
 	// Use 'onCreateCommand' to run commands as part of container creation. 
 	"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
 }
