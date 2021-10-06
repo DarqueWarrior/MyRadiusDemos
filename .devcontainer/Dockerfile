@@ -3,9 +3,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/universal:1-focal
 
 USER root
 
-# Download vsix
-RUN wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix -O /home/vscode/rad-vscode-bicep.vsix
-
 # Install .net 6
 RUN wget -q https://dot.net/v1/dotnet-install.sh -O - | /bin/bash -s - -Channel 6.0.1xx -Quality preview --install-dir $DOTNET_ROOT
 
@@ -16,3 +13,8 @@ USER codespace
 
 # ensure the latest version of Bicep
 RUN rad bicep download
+
+ARG USERNAME=vscode
+
+# Download vsix
+RUN wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix -O /home/$USERNAME/rad-vscode-bicep.vsix

@@ -57,7 +57,7 @@
 		"hookyqr.beautify",
 		"simonsiefke.prettier-vscode",
 		"streetsidesoftware.code-spell-checker",
-		"rad-vscode-bicep.vsix"
+		"/home/vscode/rad-vscode-bicep.vsix"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [],
