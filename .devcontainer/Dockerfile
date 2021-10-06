@@ -9,8 +9,6 @@ RUN wget -q https://dot.net/v1/dotnet-install.sh -O - | /bin/bash -s - -Channel 
 # Install Radius CLI
 RUN wget -q "https://get.radapp.dev/tools/rad/install.sh" -O - | /bin/bash
 
-RUN wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix; code --install-extension rad-vscode-bicep.vsix
-
 USER codespace
 
 # ensure the latest version of Bicep
