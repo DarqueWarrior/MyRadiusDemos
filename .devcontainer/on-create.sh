@@ -2,9 +2,6 @@
  
 echo "on-create start" >> ~/status
 
-# ensure the latest version of Bicep
-rad bicep download
-
 # log into azure cli
 az login --service-principal -t $TENANT -u $APPID -p $PASSWORD
 

@@ -7,9 +7,11 @@ USER root
 RUN wget -q https://dot.net/v1/dotnet-install.sh -O - | /bin/bash -s - -Channel 6.0.1xx -Quality preview --install-dir $DOTNET_ROOT
 
 # Install Radius CLI
-RUN wget wget -q "https://get.radapp.dev/tools/rad/install.sh" -O - | /bin/bash
+RUN wget -q "https://get.radapp.dev/tools/rad/install.sh" -O - | /bin/bash
+
+RUN wget https://get.radapp.dev/tools/vscode/stable/rad-vscode-bicep.vsix; code --install-extension rad-vscode-bicep.vsix
 
 USER codespace
 
-# Install Tye
-RUN dotnet tool install -g Microsoft.Tye --version "0.10.0-alpha.21420.1"
+# ensure the latest version of Bicep
+RUN rad bicep download
